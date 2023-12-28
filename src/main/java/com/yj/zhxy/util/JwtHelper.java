@@ -97,7 +97,7 @@ public class JwtHelper {
      * @return JwsHeader
      */
     public static JwsHeader parseHeader(String token) {
-        if(StringUtils.hasText(token)) {
+        if(!StringUtils.hasText(token)) {
             return null;
         }
         return parseClaim(token).getHeader();
@@ -109,7 +109,7 @@ public class JwtHelper {
      * @return Claims
      */
     public static Claims parsePayload(String token) {
-        if(StringUtils.hasText(token)) {
+        if(!StringUtils.hasText(token)) {
             return null;
         }
         return parseClaim(token).getPayload();

@@ -21,7 +21,7 @@ spring:
       max-lifetime: 540000
       maximum-pool-size: 12
       minimum-idle: 10
-      pool-name: GuliHikariPool
+      pool-name: YJHikariPool
   thymeleaf:
     #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
     mode: HTML5
@@ -44,3 +44,8 @@ mybatis-plus:
     #添加日志支持
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath*:/mapper/**/*.xml
+
+# 配置swagger文档的访问路径，访问地址：http://127.0.0.1:8080/swagger-ui.html
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

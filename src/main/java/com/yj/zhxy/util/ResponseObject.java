@@ -1,6 +1,5 @@
 package com.yj.zhxy.util;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 /**
  * @author YangJian
@@ -8,16 +7,16 @@ import lombok.Data;
  * @description 全局统一返回结果类
  */
 @Data
-@ApiModel(value = "全局统一返回结果")
+@Schema(defaultValue = "全局统一返回结果")
 public class ResponseObject<T> {
 
-    @ApiModelProperty(value = "返回码")
+    @Schema(defaultValue = "返回码")
     private Integer code;
 
-    @ApiModelProperty(value = "返回消息")
+    @Schema(defaultValue = "返回消息")
     private String message;
 
-    @ApiModelProperty(value = "返回数据")
+    @Schema(defaultValue = "返回数据")
     private T data;
 
     public ResponseObject(){}
