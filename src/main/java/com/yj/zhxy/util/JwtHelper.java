@@ -8,6 +8,7 @@ import org.springframework.util.StringUtils;
 
 import javax.crypto.SecretKey;
 import java.time.Instant;
+import java.util.Base64;
 import java.util.Date;
 
 /**
@@ -31,9 +32,9 @@ public class JwtHelper {
     /**
      * 私钥 / 生成签名的时候使用的秘钥secret，一般可以从本地配置文件中读取，切记这个秘钥不能外露，只在服务端使用，在任何场景都不应该流露出去。
      * 一旦客户端得知这个secret, 那就意味着客户端是可以自我签发jwt了。
-     * 应该大于等于 256位(长度32及以上的字符串)，并且是随机的字符串
+     * 应该大于等于 512(长度64及以上的字符串)，并且是随机的字符串
      */
-    private final static String SECRET = "123456";
+    private final static String SECRET = "UGruTOApxeEmPYXv2t3VoZzFgRyf5N6wMca1sJL7h0iDWHBqjS49klCIKdQ8bnzi";
     /**
      * 秘钥实例
      */
@@ -56,8 +57,11 @@ public class JwtHelper {
 
     //生成token字符串
     public static String createToken(Long userId, Integer userType) {
+        System.out.println("userId==="+userId);
+        System.out.println("userType==="+userType);
+        System.out.println("KEY========"+KEY);
         Date exprireDate = Date.from(Instant.now().plusSeconds(TOKEN_EXPIRE));
-        return Jwts.builder()
+        String TOKEN =  Jwts.builder()
                 // 设置头部信息header
                 .header()
                 .add("typ", "JWT")
@@ -78,6 +82,8 @@ public class JwtHelper {
                 // 压缩方式
                 .compressWith(Jwts.ZIP.GZIP)
                 .compact();
+        System.out.println("token======="+TOKEN);
+        return TOKEN;
     }
 
     /**

@@ -1,6 +1,7 @@
 package com.yj.zhxy.pojo;
 
 import lombok.Data;
+import lombok.ToString;
 
 /**
  * @author YangJian
@@ -8,6 +9,7 @@ import lombok.Data;
  * @description
  */
 @Data
+@ToString
 public class LoginForm {
 
     private String username;

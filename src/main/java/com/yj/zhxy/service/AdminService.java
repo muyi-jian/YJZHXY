@@ -12,9 +12,6 @@ import com.yj.zhxy.pojo.LoginForm;
  * @description
  */
 public interface AdminService extends IService<Admin> {
-//    Admin login(LoginForm loginForm);
-//
-//    Admin getAdminById(Long userId);
-//
-//    IPage<Admin> getAdminsByOpr(Page<Admin> pageParam, String adminName);
+    Admin login(LoginForm loginForm);
+    Admin getAdminById(Long userId);
 }

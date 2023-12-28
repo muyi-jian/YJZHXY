@@ -78,14 +78,21 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>2.1.0</version>
+            <version>2.3.0</version>
         </dependency>
 
+        <!--Spring WebMvc 支持 -->
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
-            <version>2.1.0</version>
+            <version>2.3.0</version>
         </dependency>
+        <!-- Spring WebFlux 支持文档也可以以 yaml 格式提供，路径如下：/v3/api-docs.yaml -->
+        <!--<dependency>-->
+        <!--    <groupId>org.springdoc</groupId>-->
+        <!--    <artifactId>springdoc-openapi-starter-webflux-ui</artifactId>-->
+        <!--    <version>2.3.0</version>-->
+        <!--</dependency>-->
 
 
         <!--开发者工具-->
