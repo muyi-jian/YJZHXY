@@ -1,5 +1,7 @@
 package com.yj.zhxy.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.yj.zhxy.pojo.Admin;
 import com.yj.zhxy.pojo.LoginForm;
@@ -16,4 +18,6 @@ public interface TeacherService extends IService<Teacher> {
 
     Teacher getTeacherById(Long userId);
 
+
+    IPage<Teacher> getTeachersByOpr(Page<Teacher> paraParam, Teacher teacher);
 }
